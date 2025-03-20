@@ -1,0 +1,609 @@
+!DOCTYPE html
+html lang=en
+head
+  meta charset=UTF-8
+  meta name=viewport content=width=device-width, initial-scale=1.0
+  titleResonance Advisory - Premium Financial Advisorytitle
+  style
+     {
+      margin 0;
+      padding 0;
+      box-sizing border-box;
+      font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      color #333;
+      line-height 1.6;
+    }
+    
+    .container {
+      max-width 1200px;
+      margin 0 auto;
+      padding 0 15px;
+    }
+    
+     Header 
+    header {
+      position fixed;
+      width 100%;
+      z-index 1000;
+      background-color rgba(255, 255, 255, 0.95);
+      box-shadow 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition all 0.3s ease;
+    }
+    
+    .header-container {
+      display flex;
+      justify-content space-between;
+      align-items center;
+      padding 20px 0;
+    }
+    
+    .logo {
+      display flex;
+      align-items center;
+    }
+    
+    .logo img {
+      height 32px;
+      margin-right 10px;
+    }
+    
+    .logo span {
+      font-size 24px;
+      font-weight 600;
+      color #0e3b5d;
+      letter-spacing 0.5px;
+    }
+    
+    .nav-menu {
+      display flex;
+      list-style none;
+    }
+    
+    .nav-item {
+      margin-left 40px;
+      position relative;
+    }
+    
+    .nav-link {
+      text-decoration none;
+      color #0e3b5d;
+      font-weight 500;
+      font-size 15px;
+      transition all 0.3s ease;
+      position relative;
+    }
+    
+    .nav-linkafter {
+      content '';
+      position absolute;
+      bottom -5px;
+      left 0;
+      width 0;
+      height 2px;
+      background-color #c0aa67;
+      transition width 0.3s ease;
+    }
+    
+    .nav-linkhoverafter {
+      width 100%;
+    }
+    
+    .contact-btn {
+      background-color #0e3b5d;
+      color white;
+      padding 8px 20px;
+      border-radius 4px;
+      font-weight 500;
+      transition all 0.3s ease;
+    }
+    
+    .contact-btnhover {
+      background-color #0a2e49;
+      transform translateY(-2px);
+    }
+    
+     Hero Section 
+    .hero {
+      height 100vh;
+      background-image linear-gradient(to bottom, rgba(14, 59, 93, 0.8), rgba(14, 59, 93, 0.4)), url('apiplaceholder1200600');
+      background-size cover;
+      background-position center;
+      display flex;
+      align-items center;
+      color white;
+      position relative;
+    }
+    
+    .hero-content {
+      max-width 650px;
+      animation fadeIn 1s ease-in-out;
+    }
+    
+    .hero-title {
+      font-size 48px;
+      font-weight 700;
+      margin-bottom 20px;
+      line-height 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size 20px;
+      margin-bottom 30px;
+      font-weight 300;
+      line-height 1.5;
+    }
+    
+    .hero-cta {
+      display inline-block;
+      background-color #c0aa67;
+      color white;
+      text-decoration none;
+      padding 12px 30px;
+      border-radius 4px;
+      font-weight 500;
+      font-size 16px;
+      transition all 0.3s ease;
+      margin-right 15px;
+    }
+    
+    .hero-ctahover {
+      background-color #a89250;
+      transform translateY(-3px);
+      box-shadow 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero-secondary {
+      display inline-block;
+      border 2px solid white;
+      color white;
+      text-decoration none;
+      padding 10px 28px;
+      border-radius 4px;
+      font-weight 500;
+      font-size 16px;
+      transition all 0.3s ease;
+    }
+    
+    .hero-secondaryhover {
+      background-color rgba(255, 255, 255, 0.1);
+      transform translateY(-3px);
+    }
+    
+     Stats Section 
+    .stats {
+      padding 80px 0;
+      background-color #f8f9fb;
+    }
+    
+    .stats-container {
+      display flex;
+      justify-content space-around;
+      flex-wrap wrap;
+    }
+    
+    .stat-item {
+      text-align center;
+      flex 1;
+      min-width 200px;
+      padding 30px;
+      margin 10px;
+      background-color white;
+      box-shadow 0 5px 20px rgba(0, 0, 0, 0.05);
+      border-radius 6px;
+      transition all 0.3s ease;
+    }
+    
+    .stat-itemhover {
+      transform translateY(-5px);
+      box-shadow 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-number {
+      font-size 42px;
+      font-weight 700;
+      color #c0aa67;
+      margin-bottom 10px;
+    }
+    
+    .stat-label {
+      font-size 14px;
+      text-transform uppercase;
+      letter-spacing 1px;
+      color #0e3b5d;
+      font-weight 600;
+    }
+    
+     Services Section 
+    .services {
+      padding 100px 0;
+    }
+    
+    .section-header {
+      text-align center;
+      margin-bottom 60px;
+    }
+    
+    .section-title {
+      font-size 36px;
+      font-weight 700;
+      color #0e3b5d;
+      position relative;
+      display inline-block;
+      margin-bottom 20px;
+    }
+    
+    .section-titleafter {
+      content '';
+      position absolute;
+      bottom -15px;
+      left 50%;
+      transform translateX(-50%);
+      width 50px;
+      height 3px;
+      background-color #c0aa67;
+    }
+    
+    .section-subtitle {
+      color #666;
+      font-size 18px;
+      max-width 700px;
+      margin 0 auto;
+    }
+    
+    .services-grid {
+      display grid;
+      grid-template-columns repeat(auto-fit, minmax(350px, 1fr));
+      gap 30px;
+      margin-top 50px;
+    }
+    
+    .service-card {
+      background-color white;
+      border-radius 8px;
+      overflow hidden;
+      box-shadow 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition all 0.3s ease;
+      position relative;
+    }
+    
+    .service-cardhover {
+      transform translateY(-5px);
+      box-shadow 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-cardbefore {
+      content '';
+      position absolute;
+      top 0;
+      left 0;
+      width 5px;
+      height 0;
+      background-color #c0aa67;
+      transition height 0.3s ease;
+    }
+    
+    .service-cardhoverbefore {
+      height 100%;
+    }
+    
+    .service-content {
+      padding 30px;
+      padding-left 35px;
+    }
+    
+    .service-icon {
+      color #c0aa67;
+      font-size 32px;
+      margin-bottom 20px;
+    }
+    
+    .service-title {
+      font-size 22px;
+      font-weight 600;
+      color #0e3b5d;
+      margin-bottom 15px;
+    }
+    
+    .service-desc {
+      color #666;
+      margin-bottom 20px;
+      line-height 1.7;
+    }
+    
+    .service-link {
+      color #c0aa67;
+      text-decoration none;
+      font-weight 500;
+      font-size 15px;
+      display inline-flex;
+      align-items center;
+      transition all 0.3s ease;
+    }
+    
+    .service-linkhover {
+      color #0e3b5d;
+    }
+    
+    .service-link span {
+      margin-left 8px;
+      transition margin 0.3s ease;
+    }
+    
+    .service-linkhover span {
+      margin-left 12px;
+    }
+    
+     Footer 
+    footer {
+      background-color #0e3b5d;
+      color white;
+      padding 80px 0 30px;
+    }
+    
+    .footer-top {
+      display flex;
+      flex-wrap wrap;
+      justify-content space-between;
+      margin-bottom 60px;
+    }
+    
+    .footer-info {
+      flex 0 0 30%;
+      margin-bottom 30px;
+    }
+    
+    .footer-logo {
+      font-size 28px;
+      font-weight 700;
+      margin-bottom 20px;
+      display inline-block;
+    }
+    
+    .footer-desc {
+      color rgba(255, 255, 255, 0.7);
+      margin-bottom 20px;
+      line-height 1.7;
+    }
+    
+    .footer-links {
+      flex 0 0 20%;
+      margin-bottom 30px;
+    }
+    
+    .footer-title {
+      font-size 18px;
+      font-weight 600;
+      margin-bottom 25px;
+      position relative;
+    }
+    
+    .footer-titleafter {
+      content '';
+      position absolute;
+      bottom -10px;
+      left 0;
+      width 30px;
+      height 2px;
+      background-color #c0aa67;
+    }
+    
+    .footer-link-list {
+      list-style none;
+    }
+    
+    .footer-link-item {
+      margin-bottom 12px;
+    }
+    
+    .footer-link {
+      color rgba(255, 255, 255, 0.7);
+      text-decoration none;
+      transition all 0.3s ease;
+    }
+    
+    .footer-linkhover {
+      color #c0aa67;
+    }
+    
+    .footer-contact {
+      flex 0 0 30%;
+    }
+    
+    .contact-info {
+      margin-bottom 15px;
+      display flex;
+      align-items flex-start;
+    }
+    
+    .contact-icon {
+      margin-right 15px;
+      color #c0aa67;
+    }
+    
+    .contact-text {
+      color rgba(255, 255, 255, 0.7);
+    }
+    
+    .footer-bottom {
+      border-top 1px solid rgba(255, 255, 255, 0.1);
+      padding-top 30px;
+      text-align center;
+      color rgba(255, 255, 255, 0.5);
+      font-size 14px;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity 0;
+        transform translateY(20px);
+      }
+      to {
+        opacity 1;
+        transform translateY(0);
+      }
+    }
+  style
+head
+body
+  !-- Header --
+  header
+    div class=container header-container
+      div class=logo
+        img src=apiplaceholder3232 alt=Resonance Advisory Logo
+        spanResonance Advisoryspan
+      div
+      ul class=nav-menu
+        li class=nav-itema href=# class=nav-linkHomeali
+        li class=nav-itema href=# class=nav-linkServicesali
+        li class=nav-itema href=# class=nav-linkSectorsali
+        li class=nav-itema href=# class=nav-linkReferencesali
+        li class=nav-itema href=# class=nav-linkTeamali
+        li class=nav-itema href=# class=nav-link contact-btnContactali
+      ul
+    div
+  header
+
+  !-- Hero Section --
+  section class=hero
+    div class=container
+      div class=hero-content
+        h1 class=hero-titleIndependent Advisory, Expert Project Financeh1
+        p class=hero-subtitleWe deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.p
+        a href=# class=hero-ctaOur Expertisea
+        a href=# class=hero-secondaryContact Usa
+      div
+    div
+  section
+
+  !-- Stats Section --
+  section class=stats
+    div class=container stats-container
+      div class=stat-item
+        div class=stat-number13+div
+        div class=stat-labelYears Experiencediv
+      div
+      div class=stat-item
+        div class=stat-number150+div
+        div class=stat-labelProjects Adviseddiv
+      div
+      div class=stat-item
+        div class=stat-number2div
+        div class=stat-labelGlobal Officesdiv
+      div
+    div
+  section
+
+  !-- Services Section --
+  section class=services
+    div class=container
+      div class=section-header
+        h2 class=section-titleOur Servicesh2
+        p class=section-subtitleResonance Advisory provides complementary financial advisory services tailored to infrastructure and energy projects. Our services cover the entire project lifecycle.p
+      div
+      div class=services-grid
+        div class=service-card
+          div class=service-content
+            div class=service-icon&#9776;div
+            h3 class=service-titleDebt Advisoryh3
+            p class=service-descWe assist clients in structuring and raising project finance solutions tailored to the unique specifications of their projects.p
+            a href=# class=service-linkLearn more span&rarr;spana
+          div
+        div
+        div class=service-card
+          div class=service-content
+            div class=service-icon&#9874;div
+            h3 class=service-titleAcquisition Advisoryh3
+            p class=service-descWe develop detailed financial models for cash-flow projections, financial structure optimization and asset valuation.p
+            a href=# class=service-linkLearn more span&rarr;spana
+          div
+        div
+        div class=service-card
+          div class=service-content
+            div class=service-icon&#9873;div
+            h3 class=service-titleTender Supporth3
+            p class=service-descWe assist clients in complex tender processes definition of the financing strategy and preparation of the financial bids.p
+            a href=# class=service-linkLearn more span&rarr;spana
+          div
+        div
+        div class=service-card
+          div class=service-content
+            div class=service-icon&#9783;div
+            h3 class=service-titleFinancial Modelingh3
+            p class=service-descWe assist clients in acquiring equity interests in large infrastructure and energy projects with sophisticated modeling.p
+            a href=# class=service-linkLearn more span&rarr;spana
+          div
+        div
+        div class=service-card
+          div class=service-content
+            div class=service-icon&#9745;div
+            h3 class=service-titleFinancial Model Audith3
+            p class=service-descWe conduct thorough review of financial models to ensure arithmetical accuracy and compliance with underlying assumptions.p
+            a href=# class=service-linkLearn more span&rarr;spana
+          div
+        div
+        div class=service-card
+          div class=service-content
+            div class=service-icon&#9781;div
+            h3 class=service-titleAsset Managementh3
+            p class=service-descWe assist clients with the management of their projects by updating financial models, monitoring key metrics, managing compliance.p
+            a href=# class=service-linkLearn more span&rarr;spana
+          div
+        div
+      div
+    div
+  section
+
+  !-- Footer --
+  footer
+    div class=container
+      div class=footer-top
+        div class=footer-info
+          div class=footer-logoResonance Advisorydiv
+          p class=footer-descIndependent financial advisory firm specialized in infrastructure and energy project finance. Our team of experts delivers tailored solutions worldwide.p
+        div
+        div class=footer-links
+          h3 class=footer-titleQuick Linksh3
+          ul class=footer-link-list
+            li class=footer-link-itema href=# class=footer-linkHomeali
+            li class=footer-link-itema href=# class=footer-linkServicesali
+            li class=footer-link-itema href=# class=footer-linkSectorsali
+            li class=footer-link-itema href=# class=footer-linkReferencesali
+            li class=footer-link-itema href=# class=footer-linkTeamali
+          ul
+        div
+        div class=footer-links
+          h3 class=footer-titleServicesh3
+          ul class=footer-link-list
+            li class=footer-link-itema href=# class=footer-linkDebt Advisoryali
+            li class=footer-link-itema href=# class=footer-linkAcquisition Advisoryali
+            li class=footer-link-itema href=# class=footer-linkTender Supportali
+            li class=footer-link-itema href=# class=footer-linkFinancial Modelingali
+            li class=footer-link-itema href=# class=footer-linkFinancial Model Auditali
+          ul
+        div
+        div class=footer-contact
+          h3 class=footer-titleContact Ush3
+          div class=contact-info
+            div class=contact-icon&#9993;div
+            div class=contact-textinfo@resonanceadvisory.comdiv
+          div
+          div class=contact-info
+            div class=contact-icon&#9742;div
+            div class=contact-text+44 123 456 7890div
+          div
+          div class=contact-info
+            div class=contact-icon&#9755;div
+            div class=contact-text123 Financial Street, London, UKdiv
+          div
+        div
+      div
+      div class=footer-bottom
+        p&copy; 2025 Resonance Advisory. All rights reserved.p
+      div
+    div
+  footer
+body
+html
