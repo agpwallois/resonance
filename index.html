@@ -603,32 +603,42 @@
     }
 
 
-    /* Slideshow Styles (Modified) */
-    .slideshow-container {
-      max-width: 1000px;
-      position: relative;
-      margin: auto;
-      overflow: hidden; /* Hide overflowing logos */
-    }
+        /* Slideshow Styles (Modified) */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            overflow: hidden; /* Hide overflowing logos */
+        }
 
-    .slides {
-      display: flex; /* Arrange logos horizontally */
-      transition: transform 0.5s ease-in-out; /* Smooth transition */
-    }
+        .slides {
+            display: flex; /* Arrange logos horizontally */
+            /*transition: transform 0.5s linear;  Smooth transition */
+            animation: scroll 20s linear infinite; /* Continuous scroll */
+        }
 
-    .slide {
-      flex: 0 0 auto; /* Don't grow/shrink, use specified width */
-      width: 200px; /* Adjust logo width as needed */
-      margin: 0 10px; /* Spacing between logos */
-      text-align: center; /* Center logos horizontally */
-    }
+        .slide {
+            flex: 0 0 auto; /* Don't grow/shrink, use specified width */
+            width: 200px; /* Adjust logo width as needed */
+            margin: 0 10px; /* Spacing between logos */
+            text-align: center; /* Center logos horizontally */
+            box-sizing: border-box; /* Include padding/border in width */
+        }
 
-    .slide img {
-      max-width: 100%; /* Ensure logo fits within its container */
-      height: auto;
-      display: block; /* Remove extra space below the image */
-      margin: 0 auto; /* Center vertically */
-    }
+        .slide img {
+            max-width: 100%; /* Ensure logo fits within its container */
+            height: auto;
+            display: block; /* Remove extra space below the image */
+            margin: 0 auto; /* Center vertically */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-210px * 5)); /* Total width of all items, adjust the number of items */
+            }
 
     }
   </style>
