@@ -181,43 +181,40 @@
       background-color: #f8f9fb;
     }
     
-    .stats-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    
-    .stat-item {
-      text-align: center;
-      flex: 1;
-      min-width: 200px;
-      padding: 30px;
-      margin: 10px;
-      background-color: white;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      border-radius: 6px;
-      transition: all 0.3s ease;
-    }
-    
-    .stat-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    }
-    
-    .stat-number {
-      font-size: 42px;
-      font-weight: 700;
-      color: #c0aa67;
-      margin-bottom: 10px;
-    }
-    
-    .stat-label {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #0e3b5d;
-      font-weight: 600;
-    }
+  .stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+  }
+
+  .stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .stat-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .stat-number {
+    font-size: 42px;
+    font-weight: 700;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
     
     /* Services Section */
     .services {
@@ -727,21 +724,18 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="Home">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">Independent Advisory, Expert Project Finance</h1>
-        <p class="hero-subtitle">We deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.</p>
-        <a href="#" class="hero-cta">Our Expertise</a>
-        <a href="#" class="hero-secondary">Contact Us</a>
-      </div>
+<!-- Hero Section -->
+<section class="hero" id="Home">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">Independent Advisory, Expert Project Finance</h1>
+      <p class="hero-subtitle">We deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.</p>
+      <a href="#" class="hero-cta">Our Expertise</a>
+      <a href="#" class="hero-secondary">Contact Us</a>
     </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="container stats-container">
+    
+    <!-- Stats Cards Moved Inside Hero -->
+    <div class="stats-container">
       <div class="stat-item">
         <div class="stat-number">13+</div>
         <div class="stat-label">Years Experience</div>
@@ -755,7 +749,9 @@
         <div class="stat-label">Global Offices</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Services Section -->
   <section class="services" id="Services">
