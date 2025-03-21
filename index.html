@@ -444,6 +444,7 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
 
     /* References Section */
     .references {
@@ -602,6 +603,31 @@
     }
 
 
+    /* Slideshow Styles */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+      margin-top: 20px; /* Add space between map and slideshow */
+    }
+
+    .slideshow-image {
+      display: none;
+      width: 100%;
+      height: auto; /* Adjust height as needed */
+      object-fit: cover; /* Maintain aspect ratio and cover the area */
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
 
     }
   </style>
@@ -740,6 +766,18 @@
 </section>
 
 
+
+   <!-- Slideshow container -->
+   <div class="slideshow-container">
+      <img class="slideshow-image fade" src="/clients/client1.jpg" alt="Client 1">
+      <img class="slideshow-image fade" src="/clients/client2.jpg" alt="Client 2">
+      <img class="slideshow-image fade" src="/clients/client3.jpg" alt="Client 3">
+      <!-- Add more images as needed -->
+    </div>
+
+
+
+
 <!-- Team Section -->
 <section class="team">
   <div class="container">
@@ -747,12 +785,12 @@
       <h2 class="section-title">Our Team</h2>
       <p class="section-subtitle">Our team of experienced Project Finance professionals has advised international sponsors on transactions of all sizes across Western and Eastern Europe, North America, Latin America, Africa, the Middle East, and the Asia-Pacific region.</p>
     </div>
-    
+
     <div class="team-grid">
       <!-- Team Member 1 -->
       <div class="team-card">
         <div class="team-image">
-          <img src="/api/placeholder/250/250" alt="Team Member Name">
+          <img src="/equipe/john_smith.jpg" alt="John Smith">
         </div>
         <div class="team-content">
           <h3 class="team-name">John Smith</h3>
@@ -763,11 +801,11 @@
           </a>
         </div>
       </div>
-      
+
       <!-- Team Member 2 -->
       <div class="team-card">
         <div class="team-image">
-          <img src="/api/placeholder/250/250" alt="Team Member Name">
+          <img src="/equipe/sarah_johnson.jpg" alt="Sarah Johnson">
         </div>
         <div class="team-content">
           <h3 class="team-name">Sarah Johnson</h3>
@@ -778,11 +816,11 @@
           </a>
         </div>
       </div>
-      
+
       <!-- Team Member 3 -->
       <div class="team-card">
         <div class="team-image">
-          <img src="/api/placeholder/250/250" alt="Team Member Name">
+          <img src="/equipe/michael_chen.jpg" alt="Michael Chen">
         </div>
         <div class="team-content">
           <h3 class="team-name">Michael Chen</h3>
@@ -793,11 +831,11 @@
           </a>
         </div>
       </div>
-      
+
       <!-- Team Member 4 -->
       <div class="team-card">
         <div class="team-image">
-          <img src="/api/placeholder/250/250" alt="Team Member Name">
+          <img src="/equipe/elena_rodriguez.jpg" alt="Elena Rodriguez">
         </div>
         <div class="team-content">
           <h3 class="team-name">Elena Rodriguez</h3>
@@ -1034,4 +1072,28 @@
 
   // Initialiser la carte au chargement de la page
   document.addEventListener('DOMContentLoaded', loadMap);
+</script>
+
+
+
+<script>
+  // Slideshow JavaScript
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slideshow-image");
+
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    showSlides(); // Start slideshow when the page loads
+  });
 </script>
