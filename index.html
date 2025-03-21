@@ -446,7 +446,7 @@
       }
     }
 
-    /* Sectors Section Styles */
+    /* Sectors Section Styles (Improved) */
     .sectors {
       padding: 100px 0;
       background-color: #f8f9fb;
@@ -454,7 +454,7 @@
 
     .sector-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 30px;
       margin-top: 50px;
     }
@@ -465,8 +465,7 @@
       overflow: hidden;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
-      padding: 20px;
-      text-align: center;
+      position: relative;
     }
 
     .sector-card:hover {
@@ -474,8 +473,34 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
+    .sector-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 0;
+      background-color: #c0aa67;
+      transition: height 0.3s ease;
+    }
+
+    .sector-card:hover:before {
+      height: 100%;
+    }
+
+    .sector-content {
+      padding: 30px;
+      padding-left: 35px;
+    }
+
+    .sector-icon {
+      color: #c0aa67;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
     .sector-title {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
       color: #0e3b5d;
       margin-bottom: 15px;
@@ -485,13 +510,15 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      color: #666;
+      line-height: 1.7;
     }
 
     .sector-item {
-      font-size: 14px;
-      color: #666;
+      font-size: 15px;
       margin-bottom: 8px;
     }
+
 
 
 
@@ -801,8 +828,8 @@
     </div>
   </section>
   
-<!-- Sectors Section -->
-  <section class="sectors" id="Sectors">
+  <!-- Sectors Section -->
+  <section class="sectors">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Our Sectors</h2>
@@ -812,56 +839,66 @@
       <div class="sector-grid">
         <!-- Energy -->
         <div class="sector-card">
-          <h3 class="sector-title">Energy</h3>
-          <ul class="sector-list">
-            <li class="sector-item">Wind</li>
-            <li class="sector-item">Solar photovoltaic</li>
-            <li class="sector-item">Geothermal and biomass</li>
-            <li class="sector-item">Hydrogen</li>
-          </ul>
+          <div class="sector-content">
+            <h3 class="sector-title">Energy</h3>
+            <ul class="sector-list">
+              <li class="sector-item">Wind</li>
+              <li class="sector-item">Solar photovoltaic</li>
+              <li class="sector-item">Geothermal and biomass</li>
+              <li class="sector-item">Hydrogen</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Transport -->
         <div class="sector-card">
-          <h3 class="sector-title">Transport</h3>
-          <ul class="sector-list">
-            <li class="sector-item">Road</li>
-            <li class="sector-item">Rail</li>
-            <li class="sector-item">Airport</li>
-            <li class="sector-item">Maritime transport</li>
-          </ul>
+          <div class="sector-content">
+            <h3 class="sector-title">Transport</h3>
+            <ul class="sector-list">
+              <li class="sector-item">Road</li>
+              <li class="sector-item">Rail</li>
+              <li class="sector-item">Airport</li>
+              <li class="sector-item">Maritime transport</li>
+            </ul>
+          </div>
         </div>
 
         <!-- PPP & Social -->
         <div class="sector-card">
-          <h3 class="sector-title">PPP & Social</h3>
-          <ul class="sector-list">
-            <li class="sector-item">Hospital</li>
-            <li class="sector-item">Prison</li>
-            <li class="sector-item">School</li>
-            <li class="sector-item">Public accommodation</li>
-          </ul>
+          <div class="sector-content">
+            <h3 class="sector-title">PPP & Social</h3>
+            <ul class="sector-list">
+              <li class="sector-item">Hospital</li>
+              <li class="sector-item">Prison</li>
+              <li class="sector-item">School</li>
+              <li class="sector-item">Public accommodation</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Hydro -->
         <div class="sector-card">
-          <h3 class="sector-title">Hydro</h3>
-          <ul class="sector-list">
-            <li class="sector-item">Water treatment</li>
-            <li class="sector-item">Waste distribution</li>
-            <li class="sector-item">Waste to energy</li>
-            <li class="sector-item">Desalination plant</li>
-          </ul>
+          <div class="sector-content">
+            <h3 class="sector-title">Hydro</h3>
+            <ul class="sector-list">
+              <li class="sector-item">Water treatment</li>
+              <li class="sector-item">Waste distribution</li>
+              <li class="sector-item">Waste to energy</li>
+              <li class="sector-item">Desalination plant</li>
+            </ul>
+          </div>
         </div>
                   <!-- Industrials -->
         <div class="sector-card">
-          <h3 class="sector-title">Industrials</h3>
-          <ul class="sector-list">
-            <li class="sector-item">Industry and energy performance</li>
-            <li class="sector-item">Telecom & data-centre</li>
-            <li class="sector-item">Petrochemical plant</li>
-            <li class="sector-item">Pipeline and terminal</li>
-          </ul>
+          <div class="sector-content">
+            <h3 class="sector-title">Industrials</h3>
+            <ul class="sector-list">
+              <li class="sector-item">Industry and energy performance</li>
+              <li class="sector-item">Telecom & data-centre</li>
+              <li class="sector-item">Petrochemical plant</li>
+              <li class="sector-item">Pipeline and terminal</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
