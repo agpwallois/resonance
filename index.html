@@ -1134,24 +1134,24 @@
   // Fonction pour créer une infobulle personnalisée
   function customTooltip(country, types) {
     const icons = {
-      'Biomass': '',
-      'H2': '',
-      'Airports': '',
-      'Roads': '',
-      'Power': '',
-      'Wind': '',
-      'PPP & Social Infra': '',
-      'Power Transmission': '',
-      'Solar': '',
-      'Water': '',
-      'Geothermal': '',
-      'Rail': '',
-      'Hydro': '',
-      'Light Rail': '',
-      'Oil & Gas': '',
-      'Ports': '',
-      'Ropeways': '',
-      'Telecom': ''
+      'Biomass': 'static/logos/Biomass',
+      'H2': 'static/logos/H2',
+      'Airports': 'static/logos/Airports',
+      'Roads': 'static/logos/Roads',
+      'Power': 'static/logos/Power',
+      'Wind': 'static/logos/Wind',
+      'PPP & Social Infra': 'static/logos/PPP',
+      'Power Transmission': 'static/logos/PowerTransmission',
+      'Solar': 'static/logos/Solar',
+      'Water': 'static/logos/Water',
+      'Geothermal': 'static/logos/Geothermal',
+      'Rail': 'static/logos/Rail',
+      'Hydro': 'static/logos/Hydro',
+      'Light Rail': 'static/logos/LightRail',
+      'Oil & Gas': 'static/logos/oil',
+      'Ports': 'static/logos/Ports',
+      'Ropeways': 'static/logos/Ropeways',
+      'Telecom': 'static/logos/Telecom'
     };
 
     const typesHtml = types.map(type => `<span>${icons[type]} ${type}</span>`).join('<br>');
