@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resonance Advisory - Premium Financial Advisory</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      height: 32px;
+      margin-right: 10px;
+    }
+    
+    .logo span {
+      font-size: 24px;
+      font-weight: 600;
+      color: #0e3b5d;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-item {
+      margin-left: 40px;
+      position: relative;
+    }
+    
+    .nav-link {
+      text-decoration: none;
+      color: #0e3b5d;
+      font-weight: 500;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #c0aa67;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .contact-btn {
+      background-color: #0e3b5d;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-btn:hover {
+      background-color: #0a2e49;
+      transform: translateY(-2px);
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background-image: linear-gradient(to bottom, rgba(14, 59, 93, 0.8), rgba(14, 59, 93, 0.4)), url('/api/placeholder/1200/600');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+    
+    .hero-content {
+      max-width: 650px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    
+    .hero-title {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 20px;
+      margin-bottom: 30px;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+    
+    .hero-cta {
+      display: inline-block;
+      background-color: #c0aa67;
+      color: white;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      margin-right: 15px;
+    }
+    
+    .hero-cta:hover {
+      background-color: #a89250;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hero-secondary {
+      display: inline-block;
+      border: 2px solid white;
+      color: white;
+      text-decoration: none;
+      padding: 10px 28px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    
+    .hero-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+    
+    /* Stats Section */
+    .stats {
+      padding: 80px 0;
+      background-color: #f8f9fb;
+    }
+    
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      text-align: center;
+      flex: 1;
+      min-width: 200px;
+      padding: 30px;
+      margin: 10px;
+      background-color: white;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-number {
+      font-size: 42px;
+      font-weight: 700;
+      color: #c0aa67;
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0e3b5d;
+      font-weight: 600;
+    }
+    
+    /* Services Section */
+    .services {
+      padding: 100px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #0e3b5d;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background-color: #c0aa67;
+    }
+    
+    .section-subtitle {
+      color: #666;
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .service-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 0;
+      background-color: #c0aa67;
+      transition: height 0.3s ease;
+    }
+    
+    .service-card:hover:before {
+      height: 100%;
+    }
+    
+    .service-content {
+      padding: 30px;
+      padding-left: 35px;
+    }
+    
+    .service-icon {
+      color: #c0aa67;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    .service-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #0e3b5d;
+      margin-bottom: 15px;
+    }
+    
+    .service-desc {
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    .service-link {
+      color: #c0aa67;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .service-link:hover {
+      color: #0e3b5d;
+    }
+    
+    .service-link span {
+      margin-left: 8px;
+      transition: margin 0.3s ease;
+    }
+    
+    .service-link:hover span {
+      margin-left: 12px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #0e3b5d;
+      color: white;
+      padding: 80px 0 30px;
+    }
+    
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 60px;
+    }
+    
+    .footer-info {
+      flex: 0 0 30%;
+      margin-bottom: 30px;
+    }
+    
+    .footer-logo {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    
+    .footer-desc {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    
+    .footer-links {
+      flex: 0 0 20%;
+      margin-bottom: 30px;
+    }
+    
+    .footer-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      position: relative;
+    }
+    
+    .footer-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background-color: #c0aa67;
+    }
+    
+    .footer-link-list {
+      list-style: none;
+    }
+    
+    .footer-link-item {
+      margin-bottom: 12px;
+    }
+    
+    .footer-link {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-link:hover {
+      color: #c0aa67;
+    }
+    
+    .footer-contact {
+      flex: 0 0 30%;
+    }
+    
+    .contact-info {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .contact-icon {
+      margin-right: 15px;
+      color: #c0aa67;
+    }
+    
+    .contact-text {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 30px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 14px;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="/api/placeholder/32/32" alt="Resonance Advisory Logo">
+        <span>Resonance Advisory</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sectors</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">References</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Team</a></li>
+        <li class="nav-item"><a href="#" class="nav-link contact-btn">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Independent Advisory, Expert Project Finance</h1>
+        <p class="hero-subtitle">We deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.</p>
+        <a href="#" class="hero-cta">Our Expertise</a>
+        <a href="#" class="hero-secondary">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container stats-container">
+      <div class="stat-item">
+        <div class="stat-number">13+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Projects Advised</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Global Offices</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Resonance Advisory provides complementary financial advisory services tailored to infrastructure and energy projects. Our services cover the entire project lifecycle.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-content">
+            <div class="service-icon">&#9776;</div>
+            <h3 class="service-title">Debt Advisory</h3>
+            <p class="service-desc">We assist clients in structuring and raising project finance solutions tailored to the unique specifications of their projects.</p>
+            <a href="#" class="service-link">Learn more <span>&rarr;</span></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-content">
+            <div class="service-icon">&#9874;</div>
+            <h3 class="service-title">Acquisition Advisory</h3>
+            <p class="service-desc">We develop detailed financial models for cash-flow projections, financial structure optimization and asset valuation.</p>
+            <a href="#" class="service-link">Learn more <span>&rarr;</span></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-content">
+            <div class="service-icon">&#9873;</div>
+            <h3 class="service-title">Tender Support</h3>
+            <p class="service-desc">We assist clients in complex tender processes definition of the financing strategy and preparation of the financial bids.</p>
+            <a href="#" class="service-link">Learn more <span>&rarr;</span></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-content">
+            <div class="service-icon">&#9783;</div>
+            <h3 class="service-title">Financial Modeling</h3>
+            <p class="service-desc">We assist clients in acquiring equity interests in large infrastructure and energy projects with sophisticated modeling.</p>
+            <a href="#" class="service-link">Learn more <span>&rarr;</span></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-content">
+            <div class="service-icon">&#9745;</div>
+            <h3 class="service-title">Financial Model Audit</h3>
+            <p class="service-desc">We conduct thorough review of financial models to ensure arithmetical accuracy and compliance with underlying assumptions.</p>
+            <a href="#" class="service-link">Learn more <span>&rarr;</span></a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-content">
+            <div class="service-icon">&#9781;</div>
+            <h3 class="service-title">Asset Management</h3>
+            <p class="service-desc">We assist clients with the management of their projects by updating financial models, monitoring key metrics, managing compliance.</p>
+            <a href="#" class="service-link">Learn more <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-info">
+          <div class="footer-logo">Resonance Advisory</div>
+          <p class="footer-desc">Independent financial advisory firm specialized in infrastructure and energy project finance. Our team of experts delivers tailored solutions worldwide.</p>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="#" class="footer-link">Home</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Services</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Sectors</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">References</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-title">Services</h3>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="#" class="footer-link">Debt Advisory</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Acquisition Advisory</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Tender Support</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Financial Modeling</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Financial Model Audit</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-title">Contact Us</h3>
+          <div class="contact-info">
+            <div class="contact-icon">&#9993;</div>
+            <div class="contact-text">info@resonanceadvisory.com</div>
+          </div>
+          <div class="contact-info">
+            <div class="contact-icon">&#9742;</div>
+            <div class="contact-text">+44 123 456 7890</div>
+          </div>
+          <div class="contact-info">
+            <div class="contact-icon">&#9755;</div>
+            <div class="contact-text">123 Financial Street, London, UK</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Resonance Advisory. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
