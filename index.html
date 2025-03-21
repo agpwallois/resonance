@@ -154,17 +154,9 @@ header.scrolled .logo img {
   position: relative;
 }
 
-
-.hero-container {
-    display: flex;
-    justify-content: space-between; /* Added to create space between hero content and stats */
-    align-items: flex-start; /* Align items to the top */
-}
-   
 .hero-content {
   max-width: 750px;
   animation: fadeIn 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-  padding-right: 50px; /* Added spacing between content and stats */
 }
 
 .hero-title {
@@ -189,15 +181,6 @@ header.scrolled .logo img {
   height: 2px;
   background-color: #b8995c;
 }
-
-   .hero-stats {
-  display: flex;
-  flex-direction: column; /* Stack the stats vertically */
-  gap: 20px; /* Space between the stat cards */
-  margin-left: auto;
-  margin-top: 50px;
-}
-
 
 .hero-subtitle {
   font-size: 18px;
@@ -282,15 +265,16 @@ header.scrolled .logo img {
 
 .stat-item {
   text-align: center;
+  flex: 1;
   min-width: 220px;
   padding: 40px 30px;
   background-color: white;
   border-radius: 3px;
   transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.03);
+  margin: 10px;
   position: relative;
   overflow: hidden;
-  color: #1a2b3c;
 }
 
 .stat-item:before {
@@ -1071,28 +1055,26 @@ a, button {
 <!-- Hero Section -->
 <section class="hero" id="Home">
   <div class="container">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h1 class="hero-title">Independent Advisory, Expert Project Finance</h1>
-        <p class="hero-subtitle">We deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.</p>
-        <a href="#" class="hero-cta">Our Expertise</a>
-        <a href="#" class="hero-secondary">Contact Us</a>
+    <div class="hero-content">
+      <h1 class="hero-title">Independent Advisory, Expert Project Finance</h1>
+      <p class="hero-subtitle">We deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.</p>
+      <a href="#" class="hero-cta">Our Expertise</a>
+      <a href="#" class="hero-secondary">Contact Us</a>
+    </div>
+    
+    <!-- Stats Cards Moved Inside Hero -->
+    <div class="stats-container">
+      <div class="stat-item">
+        <div class="stat-number">13+</div>
+        <div class="stat-label">Years Experience</div>
       </div>
-
-      <!-- Stats Cards Moved to a Separate Container -->
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">13+</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">150+</div>
-          <div class="stat-label">Projects Advised</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Global Offices</div>
-        </div>
+      <div class="stat-item">
+        <div class="stat-number">150+</div>
+        <div class="stat-label">Projects Advised</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Global Offices</div>
       </div>
     </div>
   </div>
@@ -1368,22 +1350,36 @@ a, button {
         <div class="footer-links">
           <h3 class="footer-title">Quick Links</h3>
           <ul class="footer-link-list">
-            <li class="footer-link-item"><a href="#Home" class="footer-link">Home</a></li>
-            <li class="footer-link-item"><a href="#Services" class="footer-link">Services</a></li>
-            <li class="footer-link-item"><a href="#Sectors" class="footer-link">Sectors</a></li>
-            <li class="footer-link-item"><a href="#References" class="footer-link">References</a></li>
-            <li class="footer-link-item"><a href="#Team" class="footer-link">Team</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Home</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Services</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Sectors</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">References</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Team</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3 class="footer-title">Services</h3>
+          <ul class="footer-link-list">
+            <li class="footer-link-item"><a href="#" class="footer-link">Debt Advisory</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Acquisition Advisory</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Tender Support</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Financial Modeling</a></li>
+            <li class="footer-link-item"><a href="#" class="footer-link">Financial Model Audit</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h3 class="footer-title">Contact Us</h3>
           <div class="contact-info">
             <div class="contact-icon">&#9993;</div>
-            <div class="contact-text">info@resonance-advisory.com</div>
+            <div class="contact-text">info@resonanceadvisory.com</div>
+          </div>
+          <div class="contact-info">
+            <div class="contact-icon">&#9742;</div>
+            <div class="contact-text">+44 123 456 7890</div>
           </div>
           <div class="contact-info">
             <div class="contact-icon">&#9755;</div>
-            <div class="contact-text">47 boulevard Diderot, Paris, France</div>
+            <div class="contact-text">123 Financial Street, London, UK</div>
           </div>
         </div>
       </div>
