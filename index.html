@@ -603,30 +603,57 @@
     }
 
 
-    /* Slideshow Styles */
+    /* Slideshow Styles (Modified) */
     .slideshow-container {
       max-width: 1000px;
       position: relative;
       margin: auto;
-      margin-top: 20px; /* Add space between map and slideshow */
+      overflow: hidden; /* Hide overflowing logos */
     }
 
-    .slideshow-image {
-      display: none;
-      width: 100%;
-      height: auto; /* Adjust height as needed */
-      object-fit: cover; /* Maintain aspect ratio and cover the area */
+    .slides {
+      display: flex; /* Arrange logos horizontally */
+      transition: transform 0.5s ease-in-out; /* Smooth transition */
     }
 
-    /* Fading animation */
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
+    .slide {
+      flex: 0 0 auto; /* Don't grow/shrink, use specified width */
+      width: 200px; /* Adjust logo width as needed */
+      margin: 0 10px; /* Spacing between logos */
+      text-align: center; /* Center logos horizontally */
     }
 
-    @keyframes fade {
-      from {opacity: .4}
-      to {opacity: 1}
+    .slide img {
+      max-width: 100%; /* Ensure logo fits within its container */
+      height: auto;
+      display: block; /* Remove extra space below the image */
+      margin: 0 auto; /* Center vertically */
+    }
+
+    /* Navigation Arrows */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
     }
 
     }
@@ -637,7 +664,7 @@
   <header>
     <div class="container header-container">
       <div class="logo">
-        <img src="static/logo_resonance" alt="Resonance Advisory Logo">
+        <img src="static/logo_resonance.svg" alt="Resonance Advisory Logo">
       </div>
       <ul class="nav-menu">
         <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
@@ -766,16 +793,22 @@
 
 
 
-   <!-- Slideshow container -->
-   <div class="slideshow-container">
-      <img class="slideshow-image fade" src="static/clients/CDC.png" alt="CDC">
-      <img class="slideshow-image fade" src="static/clients/Colas.png" alt="Colas">
-      <img class="slideshow-image fade" src="static/clients/EDF.png" alt="EDF">
-      <!-- Add more images as needed -->
-    </div>
 
+      <!-- Slideshow -->
+      <div class="slideshow-container">
+        <div class="slides">
+          <div class="slide"><img src="static/clients/CDC.png" alt="Client 1"></div>
+          <div class="slide"><img src="static/clients/CDC.png" alt="Client 2"></div>
+          <div class="slide"><img src="static/clients/CDC.png" alt="Client 3"></div>
+          <div class="slide"><img src="static/clients/CDC.png" alt="Client 4"></div>
+          <div class="slide"><img src="static/clients/CDC.png" alt="Client 5"></div>
 
+          <!-- Add more client logos here -->
+        </div>
 
+        <a class="prev">❮</a>
+        <a class="next">❯</a>
+      </div>
 
 <!-- Team Section -->
 <section class="team">
@@ -1076,23 +1109,35 @@
 
 
 <script>
-  // Slideshow JavaScript
-  let slideIndex = 0;
-  const slides = document.querySelectorAll(".slideshow-image");
+        // Slideshow JavaScript (Modified)
+        let slideIndex = 0;
+        const slidesContainer = document.querySelector(".slides");
+        const slides = document.querySelectorAll(".slide");
+        const prevButton = document.querySelector(".prev");
+        const nextButton = document.querySelector(".next");
+        const slideWidth = slides[0].offsetWidth + (parseFloat(window.getComputedStyle(slides[0]).marginLeft) * 2); // Calculate total width of one slide including margins
 
-  function showSlides() {
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
-  }
+        function goToSlide(n) {
+          slidesContainer.style.transform = `translateX(-${slideWidth * n}px)`;
+          slideIndex = n;
+        }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    showSlides(); // Start slideshow when the page loads
-  });
+        function nextSlide() {
+          if (slideIndex < slides.length - 1) {
+            goToSlide(slideIndex + 1);
+          } else {
+            goToSlide(0); // Loop back to the first slide
+          }
+        }
+
+        function prevSlide() {
+          if (slideIndex > 0) {
+            goToSlide(slideIndex - 1);
+          } else {
+            goToSlide(slides.length - 1); // Loop to the last slide
+          }
+        }
+
+        prevButton.addEventListener("click", prevSlide);
+        nextButton.addEventListener("click", nextSlide);
 </script>
