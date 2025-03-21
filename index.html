@@ -444,6 +444,58 @@
         opacity: 1;
         transform: translateY(0);
       }
+
+    /* References Section */
+    .references {
+      padding: 100px 0;
+      background-color: #f8f9fb;
+    }
+
+    #regions_div {
+      width: 950px;
+      height: 500px;
+      margin: 0 auto;
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 5px;
+      font-size: 12px;
+      pointer-events: none;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe ui', sans-serif;
+      font-weight: 100;
+      font-style: normal;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    .legend-color {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+    }
+
+    .color-3 { background-color: #5F9DAD; }
+    .color-4 { background-color: #A3C5D7; }
+
+
+
+
     }
   </style>
 </head>
@@ -556,6 +608,31 @@
     </div>
   </section>
 
+
+<!-- References Section -->
+<section class="references">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Our References</h2>
+      <p class="section-subtitle">Resonance Advisory supports sponsors and investors in infrastructure and energy projects across all sectors, including energy (wind, solar, geothermal, hydrogen, biomass), transportation (airports, roads, rail) and social infrastructure such as PPPs and water treatment and distribution systems.</p>
+    </div>
+    
+    <!-- Map from paste.txt -->
+    <div id="regions_div"></div>
+    
+    <!-- Legend for the map -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color color-3"></div><span>Resonance Advisory credentials</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color color-4"></div><span>Team experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -607,3 +684,173 @@
   </footer>
 </body>
 </html>
+
+
+
+
+<!-- D3.js Library -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- Map Script -->
+<script>
+  // Données de pays, valeurs et types d'activités associées
+  var data = [
+    ['Argentina', 3, ['Biomass']],
+    ['Australia', 3, ['H2', 'Ports']],
+    ['Austria', 3, ['Airports']],
+    ['Belgium', 3, ['PPP & Social Infra', 'Roads']],
+    ['Benin', 3, ['Power']],
+    ['Brazil', 3, ['Airports', 'Solar', 'Wind']],
+    ['Burkina Faso', 3, ['PPP & Social Infra']],
+    ['Canada', 4, ['Roads']],
+    ['Cape Verde', 3, ['Airports']],
+    ['Chile', 4, ['Power Transmission']],
+    ['Colombia', 3, ['Solar']],
+    ['Costa Rica', 4, ['Airports']],
+    ['Croatia', 4, ['Roads']],
+    ['Czech Republic', 3, ['Roads']],
+    ['Dominican Republic', 3, ['Airports', 'Wind']],
+    ['Ecuador', 3, ['Water']],
+    ['Egypt', 3, ['Light Rail', 'Wind']],
+    ['Ethiopia', 3, ['Geothermal', 'Rail', 'Wind']],
+    ['France', 3, ['Airports', 'H2', 'Light Rail', 'PPP & Social Infra', 'Rail', 'Roads', 'Solar', 'Telecom', 'Water', 'Wind']],
+    ['French Guiana', 3, ['Airports']],
+    ['French Polynesia', 3, ['Airports']],
+    ['Gabon', 3, ['Rail']],
+    ['Georgia', 3, ['Hydro']],
+    ['Germany', 4, ['Roads', 'Solar', 'Wind']],
+    ['Greece', 4, ['Roads']],
+    ['Guatemala', 3, ['Solar']],
+    ['Hungary', 4, ['Roads']],
+    ['Ireland', 3, ['Wind']],
+    ['Italy', 4, ['Airports']],
+    ['Ivory Coast', 3, ['Biomass', 'Roads']],
+    ['Jamaica', 3, ['Solar']],
+    ['Jordan', 3, ['PPP & Social Infra', 'Water']],
+    ['Kenya', 3, ['Wind']],
+    ['Macedonia', 3, ['Light Rail']],
+    ['Mali', 3, ['PPP & Social Infra']],
+    ['Mauritania', 3, ['Ports', 'PPP & Social Infra']],
+    ['Mexico', 4, ['Power', 'Wind']],
+    ['Moldova', 3, ['Airports']],
+    ['Morocco', 3, ['Airports','Ropeways', 'Water']],
+    ['Netherlands', 3, ['H2', 'PPP & Social Infra', 'Roads']],
+    ['New Caledonia', 3, ['Airports', 'Hydro', 'Solar', 'Wind']],
+    ['Niger', 3, ['PPP & Social Infra']],
+    ['Nigeria', 4, ['Oil & Gas']],
+    ['Oman', 4, ['H2', 'Oil & Gas']],
+    ['Peru', 4, ['Oil & Gas']],
+    ['Poland', 4, ['Roads', 'Wind']],
+    ['Portugal', 3, ['H2', 'Ports']],
+    ['Qatar', 4, ['Oil & Gas']],
+    ['Rwanda', 3, ['Airports']],
+    ['Saudi Arabia', 3, ['PPP & Social Infra']],
+    ['Senegal', 3, ['Airports', 'Roads']],
+    ['Slovakia', 4, ['Airports', 'Roads']],
+    ['Spain', 4, ['Roads']],
+    ['Sweden', 3, ['Wind']],
+    ['Togo', 3, ['Roads']],
+    ['Tunisia', 4, ['Water']],
+    ['Turkmenistan', 4, ['Oil & Gas']],
+    ['United Arab Emirates', 4, ['Oil & Gas']],
+    ['United Kingdom', 3, ['Roads', 'Wind']],
+    ['USA', 4, ['Power']],
+    ['Uzbekistan', 3, ['PPP & Social Infra', 'Solar']],
+    ['Yemen', 4, ['Oil & Gas']],
+  ];
+
+  // Fonction pour créer une infobulle personnalisée
+  function customTooltip(country, types) {
+    const icons = {
+      'Biomass': '',
+      'H2': '',
+      'Airports': '',
+      'Roads': '',
+      'Power': '',
+      'Wind': '',
+      'PPP & Social Infra': '',
+      'Power Transmission': '',
+      'Solar': '',
+      'Water': '',
+      'Geothermal': '',
+      'Rail': '',
+      'Hydro': '',
+      'Light Rail': '',
+      'Oil & Gas': '',
+      'Ports': '',
+      'Ropeways': '',
+      'Telecom': ''
+    };
+
+    const typesHtml = types.map(type => `<span>${icons[type]} ${type}</span>`).join('<br>');
+
+    return `
+      <div>
+        <strong>${country}</strong><br>
+        ${typesHtml}
+      </div>
+    `;
+  }
+
+  // Fonction de chargement de la carte D3.js
+  function loadMap() {
+    // Dimensions de la carte
+    const width = 950;
+    const height = 600;
+
+    // Créer un SVG pour la carte
+    const svg = d3.select("#regions_div").append("svg")
+      .attr("width", width)
+      .attr("height", height);
+    
+    // Projection pour afficher la carte du monde
+    const projection = d3.geoEqualEarth()
+      .scale(180) // Ajuster l'échelle pour mieux afficher la carte
+      .translate([width/2.2, height/2]); // Centrer la carte
+
+    // Générateur de chemins pour la carte
+    const path = d3.geoPath().projection(projection);
+
+    // Charger les données de pays (GeoJSON)
+    d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(worldData) {
+      // Filtrer pour exclure le Groenland
+      const filteredData = worldData.features.filter(function(d) {
+        return d.properties.name !== "Greenland" && d.properties.name !== "Antarctica";
+      });
+      
+      // Créer une échelle de couleurs en fonction des valeurs des pays
+      const colorScale = d3.scaleOrdinal()
+        .domain([3, 4, 5]) // Les valeurs possibles
+        .range(["#5F9DAD", "#A3C5D7", "#FFFFFF"]); // Les valeurs dans vos données
+
+      // Ajouter les pays à la carte avec les couleurs
+      svg.selectAll("path")
+        .data(filteredData)
+        .enter().append("path")
+        .attr("d", path)
+        .attr("fill", function(d) {
+          // Chercher les pays dans les données et leur attribuer une couleur
+          const countryData = data.find(item => item[0] === d.properties.name);
+          return countryData ? colorScale(countryData[1]) : "#cccccc";
+        })
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 0.5)
+        .on("mouseover", function(event, d) {
+          // Trouver les données associées au pays
+          const countryData = data.find(item => item[0] === d.properties.name);
+          const tooltip = d3.select('body').append('div')
+            .attr('class', 'tooltip')
+            .html(countryData ? customTooltip(d.properties.name, countryData[2]) : d.properties.name)
+            .style('left', event.pageX + 5 + 'px')
+            .style('top', event.pageY + 5 + 'px');
+        })
+        .on("mouseout", function() {
+          // Retirer le tooltip
+          d3.selectAll('.tooltip').remove();
+        });
+    });
+  }
+
+  // Initialiser la carte au chargement de la page
+  document.addEventListener('DOMContentLoaded', loadMap);
+</script>
