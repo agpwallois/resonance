@@ -577,113 +577,7 @@ footer:before {
   position: relative;
 }
 
-/* Enhanced Sectors Section */
-.sectors {
-  padding: 120px 0;
-  background-color: #f9f9fb;
-  position: relative;
-}
 
-.sectors:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/api/placeholder/1200/600');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.035;
-}
-
-.sector-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 40px;
-  margin-top: 60px;
-  position: relative;
-}
-
-.sector-card {
-  background-color: white;
-  border-radius: 3px;
-  overflow: hidden;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
-  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.sector-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.sector-card:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3px;
-  height: 0;
-  background-color: #b8995c;
-  transition: height 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.sector-card:hover:before {
-  height: 100%;
-}
-
-.sector-content {
-  padding: 40px;
-  padding-left: 45px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.sector-icon {
-  color: #b8995c;
-  font-size: 36px;
-  margin-bottom: 25px;
-}
-
-.sector-title {
-  font-size: 22px;
-  font-weight: 500;
-  color: #102c48;
-  margin-bottom: 20px;
-}
-
-.sector-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: #5a6a77;
-  line-height: 1.8;
-}
-
-.sector-item {
-  font-size: 15px;
-  margin-bottom: 12px;
-  position: relative;
-  padding-left: 22px;
-}
-
-.sector-item:before {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: 0;
-  width: 8px;
-  height: 1px;
-  background-color: #b8995c;
-}
-
-/* Premium References Section */
 .references {
       padding: 100px 0;
     }
@@ -737,7 +631,6 @@ footer:before {
     .color-3 { background-color: #5F9DAD; }
     .color-4 { background-color: #A3C5D7; }
 
-/* Elegant Team Section */
 .team {
   padding: 120px 0;
   background-color: #f9f9fb;
@@ -1066,8 +959,6 @@ a, button {
     <div class="hero-content">
       <h1 class="hero-title">Independent Advisory, Expert Project Finance</h1>
       <p class="hero-subtitle">We deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.</p>
-      <a href="#" class="hero-cta">Our Expertise</a>
-      <a href="#" class="hero-secondary">Contact Us</a>
     </div>
     
     <!-- Stats Cards Moved Inside Hero -->
@@ -1111,35 +1002,30 @@ a, button {
         </div>
         <div class="service-card">
           <div class="service-content">
-            <div class="service-icon">&#9874;</div>
             <h3 class="service-title">Acquisition Advisory</h3>
             <p class="service-desc">We develop detailed financial models for cash-flow projections, financial structure optimization and asset valuation.</p>
           </div>
         </div>
         <div class="service-card">
           <div class="service-content">
-            <div class="service-icon">&#9873;</div>
             <h3 class="service-title">Tender Support</h3>
             <p class="service-desc">We assist clients in complex tender processes definition of the financing strategy and preparation of the financial bids.</p>
           </div>
         </div>
         <div class="service-card">
           <div class="service-content">
-            <div class="service-icon">&#9783;</div>
             <h3 class="service-title">Financial Modeling</h3>
             <p class="service-desc">We assist clients in acquiring equity interests in large infrastructure and energy projects with sophisticated modeling.</p>
           </div>
         </div>
         <div class="service-card">
           <div class="service-content">
-            <div class="service-icon">&#9745;</div>
             <h3 class="service-title">Financial Model Audit</h3>
             <p class="service-desc">We conduct thorough review of financial models to ensure arithmetical accuracy and compliance with underlying assumptions.</p>
           </div>
         </div>
         <div class="service-card">
           <div class="service-content">
-            <div class="service-icon">&#9781;</div>
             <h3 class="service-title">Asset Management</h3>
             <p class="service-desc">We assist clients with the management of their projects by updating financial models, monitoring key metrics, managing compliance.</p>
           </div>
@@ -1148,86 +1034,6 @@ a, button {
     </div>
   </section>
   
-  <!-- Sectors Section -->
-  <section class="sectors" id="Sectors">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Our Sectors</h2>
-        <p class="section-subtitle">Our expertise spans infrastructure sectors worldwide, including roads, railways, airports, and social infrastructure such as prisons, hospitals, and water treatment facilities. In the energy sector, we cover a broad range of projects, including wind, solar, hydropower, geothermal, biomass, and green hydrogen.</p>
-      </div>
-
-      <div class="sector-grid">
-        <!-- Energy -->
-        <div class="sector-card">
-          <div class="sector-content">
-            <div class="sector-icon">&#9776</div> <!-- Example Icon -->
-            <h3 class="sector-title">Energy</h3>
-            <ul class="sector-list">
-              <li class="sector-item">Wind</li>
-              <li class="sector-item">Solar photovoltaic</li>
-              <li class="sector-item">Geothermal and biomass</li>
-              <li class="sector-item">Hydrogen</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Transport -->
-        <div class="sector-card">
-          <div class="sector-content">
-            <div class="sector-icon">&#9776</div> <!-- Example Icon -->
-            <h3 class="sector-title">Transport</h3>
-            <ul class="sector-list">
-              <li class="sector-item">Road</li>
-              <li class="sector-item">Rail</li>
-              <li class="sector-item">Airport</li>
-              <li class="sector-item">Maritime transport</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- PPP & Social -->
-        <div class="sector-card">
-          <div class="sector-content">
-            <div class="sector-icon">&#9776</div> <!-- Example Icon -->
-            <h3 class="sector-title">PPP & Social</h3>
-            <ul class="sector-list">
-              <li class="sector-item">Hospital</li>
-              <li class="sector-item">Prison</li>
-              <li class="sector-item">School</li>
-              <li class="sector-item">Public accommodation</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Hydro -->
-        <div class="sector-card">
-          <div class="sector-content">
-            <div class="sector-icon">&#9776</div> <!-- Example Icon -->
-            <h3 class="sector-title">Hydro</h3>
-            <ul class="sector-list">
-              <li class="sector-item">Water treatment</li>
-              <li class="sector-item">Waste distribution</li>
-              <li class="sector-item">Waste to energy</li>
-              <li class="sector-item">Desalination plant</li>
-            </ul>
-          </div>
-        </div>
-                  <!-- Industrials -->
-        <div class="sector-card">
-          <div class="sector-content">
-            <div class="sector-icon">&#9776</div> <!-- Example Icon -->
-            <h3 class="sector-title">Industrials</h3>
-            <ul class="sector-list">
-              <li class="sector-item">Industry and energy performance</li>
-              <li class="sector-item">Telecom & data-centre</li>
-              <li class="sector-item">Petrochemical plant</li>
-              <li class="sector-item">Pipeline and terminal</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 <!-- References Section -->
 <section class="references" id="References">
