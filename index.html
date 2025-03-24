@@ -577,7 +577,113 @@ footer:before {
   position: relative;
 }
 
+/* Enhanced Sectors Section */
+.sectors {
+  padding: 120px 0;
+  background-color: #f9f9fb;
+  position: relative;
+}
 
+.sectors:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/api/placeholder/1200/600');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.035;
+}
+
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.sector-card {
+  background-color: white;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sector-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.sector-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background-color: #b8995c;
+  transition: height 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.sector-card:hover:before {
+  height: 100%;
+}
+
+.sector-content {
+  padding: 40px;
+  padding-left: 45px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sector-icon {
+  color: #b8995c;
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+
+.sector-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #102c48;
+  margin-bottom: 20px;
+}
+
+.sector-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #5a6a77;
+  line-height: 1.8;
+}
+
+.sector-item {
+  font-size: 15px;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 22px;
+}
+
+.sector-item:before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 8px;
+  height: 1px;
+  background-color: #b8995c;
+}
+
+/* Premium References Section */
 .references {
       padding: 100px 0;
     }
@@ -631,6 +737,7 @@ footer:before {
     .color-3 { background-color: #5F9DAD; }
     .color-4 { background-color: #A3C5D7; }
 
+/* Elegant Team Section */
 .team {
   padding: 120px 0;
   background-color: #f9f9fb;
@@ -959,6 +1066,7 @@ a, button {
     <div class="hero-content">
       <h1 class="hero-title">Independent Advisory, Expert Project Finance</h1>
       <p class="hero-subtitle">We deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.</p>
+      <a href="#" class="hero-cta">Download our brochure</a>
     </div>
     
     <!-- Stats Cards Moved Inside Hero -->
@@ -974,8 +1082,7 @@ a, button {
       <div class="stat-item">
         <div class="stat-number">40+</div>
         <div class="stat-label">Countries</div>
-      </div>      
-     
+      </div>
       <div class="stat-item">
         <div class="stat-number">2</div>
         <div class="stat-label">Global Offices</div>
@@ -995,7 +1102,6 @@ a, button {
       <div class="services-grid">
         <div class="service-card">
           <div class="service-content">
-            <div class="service-icon">&#9776;</div>
             <h3 class="service-title">Debt Advisory</h3>
             <p class="service-desc">We assist clients in structuring and raising project finance solutions tailored to the unique specifications of their projects.</p>
           </div>
@@ -1034,6 +1140,7 @@ a, button {
     </div>
   </section>
   
+
 
 <!-- References Section -->
 <section class="references" id="References">
