@@ -918,23 +918,6 @@ a, button {
   .stat-item {
     flex: 0 0 calc(50% - 20px);
   }
-
-    /* Style for the red border square */
-    .red-border-square {
-      position: absolute;
-      top: -20px; /* Adjust as needed to overlap */
-      right: -20px; /* Adjust as needed to overlap */
-      width: 250px; /* Adjust size as needed */
-      height: 160px; /* Adjust size as needed */
-      border: 3px solid red; /* Adjust border style as needed */
-      z-index: 2; /* Ensure it's above the stat-item */
-    }
-
-    .stat-item:last-child {
-      position: relative; /* Required for absolute positioning of the square */
-    }
-
-
   
   .footer-info, .footer-links, .footer-contact {
     flex: 0 0 100%;
@@ -1006,8 +989,6 @@ a, button {
       <div class="stat-item">
         <div class="stat-number">2</div>
         <div class="stat-label">Global Offices</div>
-        <div class="red-border-square"></div>
-
       </div>
     </div>
   </div>
