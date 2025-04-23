@@ -153,6 +153,7 @@ header.scrolled .logo img {
   top: 0;
   left: calc(60vw - 1000px); /* Shifts so x=1000 aligns with sidebar's left edge */
   z-index: 2;
+  pointer-events: none;
 }
 
 .resonance-curves-2 {
@@ -162,6 +163,8 @@ header.scrolled .logo img {
   top: 0;
   left: calc(60vw - 1000px); /* Shifts so x=1000 aligns with sidebar's left edge */
   z-index: 1;
+  pointer-events: none;
+
 }
    
 /* Elegant Hero Section with Depth */
@@ -1001,7 +1004,7 @@ a, button {
 <!-- Hero Section with Sidebar -->
 <section class="hero" id="Home">
 
-<svg class="resonance-curves" viewBox="0 0 2000 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<svg class="resonance-curves" viewBox="0 0 2000 500" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
 
   <!-- δ = 0.15ω₀ curve (highest and sharpest) -->
 <path d="M100,450 
