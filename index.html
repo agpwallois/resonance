@@ -1003,14 +1003,32 @@ a, button {
 
 <svg class="resonance-curves" viewBox="0 0 750 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Smooth and slightly flatter resonance curve -->
+  <!-- δ = 0.15ω₀ curve (highest and sharpest) -->
   <path d="M100,450 
-           C160,445 240,420 280,380 
-           C290,360 295,330 300,300 
-           C305,330 310,360 320,380 
-           C360,420 440,445 700,450" 
+           C160,440 240,400 285,310 
+           C292,290 298,270 300,260 
+           C302,270 308,290 315,310 
+           C360,400 440,440 700,450" 
         fill="none" stroke="white" stroke-width="3" />
+
+  <!-- δ = 0.5ω₀ curve (moderate peak) -->
+  <path d="M100,450 
+           C160,445 240,415 285,340 
+           C292,325 298,310 300,300 
+           C302,310 308,325 315,340 
+           C360,415 440,445 700,450" 
+        fill="none" stroke="white" stroke-width="3" />
+
+  <!-- Heavily damped curve (lowest and flattest) -->
+  <path d="M100,450 
+           C160,448 240,435 285,370 
+           C292,355 298,340 300,330 
+           C302,340 308,355 315,370 
+           C360,435 440,448 700,450" 
+        fill="none" stroke="white" stroke-width="3" />
+
 </svg>
+
 
   
 <svg class="resonance-curves-2" viewBox="0 0 750 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
