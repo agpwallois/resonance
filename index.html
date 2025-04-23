@@ -146,7 +146,25 @@ header.scrolled .logo img {
     background-color: transparent !important;
 }
 
+.resonance-curves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 
+.curve-1, .curve-2 {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.7);
+    stroke-width: 4;
+}
+
+.curve-2 {
+    stroke: rgba(255, 255, 255, 0.4);
+    stroke-width: 3;
+}
    
 /* Elegant Hero Section with Depth */
 .hero {
@@ -183,15 +201,14 @@ header.scrolled .logo img {
   position: absolute;
   right: 0;
   top: 0;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
-  padding: 30px;
+  padding: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
    
 .hero-title {
-  font-size: 60px;
+  font-size: 54px;
   font-family: "Source Serif Pro", serif;
   font-weight: 600;
   font-style: italic;
@@ -984,6 +1001,16 @@ a, button {
 
 <!-- Hero Section with Sidebar -->
 <section class="hero" id="Home">
+
+  <svg class="resonance-curves" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+      <!-- First resonance curve (tall peak) -->
+      <path class="curve-1" d="M0,500 C50,500 150,500 250,490 C350,480 400,470 450,450 C480,440 490,300 500,100 C510,300 520,440 550,450 C600,470 650,480 750,490 C850,500 950,500 1000,500" />
+      
+      <!-- Second resonance curve (shorter peak) -->
+      <path class="curve-2" d="M0,500 C50,500 150,490 250,480 C350,460 400,440 450,420 C480,410 490,350 500,200 C510,350 520,410 550,420 C600,440 650,460 750,480 C850,490 950,500 1000,500" />
+  </svg>
+
+  
   <div class="container hero-container">
     <div class="hero-content">
       <h1 class="hero-title">Project Finance Advisor<br/>for Energy and Infrastructure</h1>
