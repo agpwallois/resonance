@@ -172,8 +172,8 @@ header.scrolled .logo img {
 .hero-content {
   flex: 0 0 60%;
   max-width: 60%;
+  padding-right: 40px;
 }
-
 /* Hero sidebar styles */
 .hero-sidebar {
   flex: 0 0 40%;
@@ -183,6 +183,11 @@ header.scrolled .logo img {
   position: absolute;
   right: 0;
   top: 0;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
    
 .hero-title {
@@ -284,22 +289,22 @@ header.scrolled .logo img {
 
 .stats-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   margin-top: 60px;
   position: relative;
+  gap: 15px;
+  width: 100%;
 }
 
 .stat-item {
-  text-align: center;
   flex: 1;
-  min-width: 220px;
+  text-align: center;
   padding: 20px 15px;
   background-color: white;
   border-radius: 3px;
   transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.03);
-  margin: 10px;
   position: relative;
   overflow: hidden;
 }
@@ -886,19 +891,15 @@ a, button {
   cursor: pointer;
 }
 
-/* Responsive Adjustments */
+/* Responsive adjustments for stats and sidebar */
 @media (max-width: 992px) {
-  .hero-content {
-    flex: 0 0 100%;
-    max-width: 100%;
+  .stats-container {
+    flex-wrap: wrap;
   }
   
-  .hero-sidebar {
-    display: none;
-  }
-  
-  .stat-number {
-    font-size: 40px;
+  .stat-item {
+    flex: 1 1 45%;
+    margin-bottom: 15px;
   }
 }
 
