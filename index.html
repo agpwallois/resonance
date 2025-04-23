@@ -155,16 +155,6 @@ header.scrolled .logo img {
     z-index: 1;
 }
 
-.curve-1, .curve-2 {
-    fill: none;
-    stroke: rgba(255, 255, 255, 0.7);
-    stroke-width: 4;
-}
-
-.curve-2 {
-    stroke: rgba(255, 255, 255, 0.4);
-    stroke-width: 3;
-}
    
 /* Elegant Hero Section with Depth */
 .hero {
@@ -1002,94 +992,67 @@ a, button {
 <!-- Hero Section with Sidebar -->
 <section class="hero" id="Home">
 
-<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background grid (subtle) -->
-  <g stroke="#eee" stroke-width="0.5">
-    <!-- Vertical grid lines -->
-    <line x1="100" y1="50" x2="100" y2="450" />
-    <line x1="200" y1="50" x2="200" y2="450" />
-    <line x1="300" y1="50" x2="300" y2="450" />
-    <line x1="400" y1="50" x2="400" y2="450" />
-    <line x1="500" y1="50" x2="500" y2="450" />
-    <line x1="600" y1="50" x2="600" y2="450" />
-    <line x1="700" y1="50" x2="700" y2="450" />
-    <!-- Horizontal grid lines -->
-    <line x1="100" y1="100" x2="700" y2="100" />
-    <line x1="100" y1="150" x2="700" y2="150" />
-    <line x1="100" y1="200" x2="700" y2="200" />
-    <line x1="100" y1="250" x2="700" y2="250" />
-    <line x1="100" y1="300" x2="700" y2="300" />
-    <line x1="100" y1="350" x2="700" y2="350" />
-    <line x1="100" y1="400" x2="700" y2="400" />
-  </g>
+<svg class="resonance-curves" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Axes -->
-  <g stroke="black" stroke-width="2">
-    <line x1="100" y1="450" x2="700" y2="450" /> <!-- x-axis -->
-    <line x1="100" y1="50" x2="100" y2="450" /> <!-- y-axis -->
-  </g>
-
-  <!-- Center line (frequency ratio = 1) -->
-  <line x1="300" y1="50" x2="300" y2="450" stroke="#000" stroke-width="1" stroke-dasharray="5,5" />
 
   <!-- Resonance curves (from highest to lowest peak) -->
   <!-- Red envelope curve (δ = 0) -->
   <path d="M100,450 L120,450 L140,449 L160,448 L180,446 L200,443 L220,437 L240,428 L260,413 L280,390 
            L290,370 L295,350 L298,320 L299,290 L300,50 L301,290 L302,320 L305,350 L310,370 L320,390 
            L340,413 L360,428 L380,437 L400,443 L420,446 L440,448 L460,449 L480,450 L500,450 L700,450" 
-        fill="none" stroke="red" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 0.1ω₀ curve (highest black peak) -->
   <path d="M100,450 L120,450 L140,449 L160,448 L180,445 L200,442 L220,435 L240,425 L260,408 L280,380 
            L290,350 L295,320 L298,280 L299,230 L300,150 L301,230 L302,280 L305,320 L310,350 L320,380 
            L340,408 L360,425 L380,435 L400,442 L420,445 L440,448 L460,449 L480,450 L500,450 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 0.15ω₀ curve -->
   <path d="M100,450 L140,449 L180,445 L220,435 L260,410 L280,385 L290,355 L295,325 L298,290 L299,260 
            L300,200 L301,260 L302,290 L305,325 L310,355 L320,385 L340,410 L380,435 L420,445 L460,449 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 0.2ω₀ curve -->
   <path d="M100,450 L140,449 L180,444 L220,434 L260,412 L280,390 L290,360 L295,335 L298,310 L299,285 
            L300,230 L301,285 L302,310 L305,335 L310,360 L320,390 L340,412 L380,434 L420,444 L460,449 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 0.3ω₀ curve -->
   <path d="M100,450 L140,448 L180,443 L220,432 L260,410 L280,390 L290,370 L295,350 L298,330 L299,315 
            L300,280 L301,315 L302,330 L305,350 L310,370 L320,390 L340,410 L380,432 L420,443 L460,448 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 0.4ω₀ curve -->
   <path d="M100,450 L140,447 L180,441 L220,430 L260,408 L280,390 L290,372 L295,356 L298,340 L299,330 
            L300,310 L301,330 L302,340 L305,356 L310,372 L320,390 L340,408 L380,430 L420,441 L460,447 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 0.5ω₀ curve -->
   <path d="M100,450 L140,446 L180,439 L220,428 L260,405 L280,390 L290,375 L295,360 L298,348 L299,340 
            L300,328 L301,340 L302,348 L305,360 L310,375 L320,390 L340,405 L380,428 L420,439 L460,446 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 1.0ω₀ curve -->
   <path d="M100,450 L140,443 L180,433 L220,420 L260,400 L280,386 L290,375 L295,368 L298,360 L299,355 
            L300,350 L301,355 L302,360 L305,368 L310,375 L320,386 L340,400 L380,420 L420,433 L460,443 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 3.0ω₀ curve -->
   <path d="M100,450 L140,438 L180,425 L220,410 L260,390 L280,380 L290,375 L295,372 L298,368 L299,365 
            L300,362 L301,365 L302,368 L305,372 L310,375 L320,380 L340,390 L380,410 L420,425 L460,438 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- δ = 10.0ω₀ curve (lowest black curve) -->
   <path d="M100,450 L140,430 L180,410 L220,390 L260,375 L280,368 L290,365 L295,362 L298,360 L299,359 
            L300,358 L301,359 L302,360 L305,362 L310,365 L320,368 L340,375 L380,390 L420,410 L460,430 L700,450" 
-        fill="none" stroke="black" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
   
   <!-- Blue maximum curve -->
   <path d="M100,450 L120,450 L140,450 L160,450 L180,450 L200,448 L220,446 L240,442 L260,436 L280,425 
            L290,415 L295,400 L298,380 L299,360 L300,330 L301,360 L302,380 L305,400 L310,415 L320,425 
            L340,436 L360,442 L380,446 L400,448 L420,450 L440,450 L460,450 L480,450 L500,450 L700,450" 
-        fill="none" stroke="blue" stroke-width="2" />
+        fill="none" stroke="white" stroke-width="2" />
 </svg>
   
   <div class="container hero-container">
