@@ -150,7 +150,6 @@ header.scrolled .logo img {
   position: absolute;
   height: 100%;
   top: 0;
-  left: calc(60vw - 1000px); /* Shifts so x=1000 aligns with sidebar's left edge */
   pointer-events: none;
 }
 
@@ -1005,23 +1004,23 @@ a, button {
 <svg class="resonance-curves" viewBox="0 0 2000 500" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
 
   <!-- δ = 0.15ω₀ curve (highest and sharpest) -->
-<path d="M100,450 
+<path d="M0,450 
           C400,450 450,150 500,150 
           C550,150 600,450 700,450" 
-       fill="none" stroke="white" stroke-width="4" />
+       fill="none" stroke="white" stroke-width="3" />
 
-<path d="M100,450 
+<path d="M0,450 
           C400,450 450,250 500,250 
           C550,250 600,450 700,450" 
        id="lowerCurve1"
-       fill="none" stroke="white" stroke-width="4" />
+       fill="none" stroke="white" stroke-width="3" />
 
   <!-- Heavily damped curve (lowest and flattest) -->
-<path d="M100,450 
+<path d="M0,450 
           C400,450 450,350 500,350 
           C550,350 600,450 700,450" 
        id="lowerCurve2"
-       fill="none" stroke="white" stroke-width="4" />
+       fill="none" stroke="white" stroke-width="3" />
 
 </svg>
 
