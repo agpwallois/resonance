@@ -169,48 +169,44 @@ header.scrolled .logo img {
   position: relative;
 }
 
-/* Hero container layout - NOW FULL WIDTH */
+/* Make the hero container truly full width */
 .hero-container {
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center;
   position: relative;
-  width: 100%; /* Takes full width of .hero */
-  /* Removed max-width and margin: 0 auto inherited from .container */
-  /* Optional: Add padding directly if needed on the edges */
-  /* padding: 0 5%; */
-  box-sizing: border-box; /* Include padding in width calculation */
-  height: 100%; /* Ensure it fills the parent height if needed */
+  width: 100%;
+  padding: 0; /* Remove any padding */
+  box-sizing: border-box;
+  height: 100%;
   z-index: 2;
 }
 
-/* Hero content adjustment */
+/* Adjust the hero content to have left padding only */
 .hero-content {
-  flex: 1; /* Let content take up remaining space */
-  max-width: 800px; /* Example: Constrain the text content width */
-  margin-left: 5%;   /* Add margin to simulate container padding */
-  padding-right: 30px; /* Keep spacing between content and sidebar */
+  flex: 1;
+  max-width: 800px;
+  margin-left: 5%; /* Left margin only */
+  padding-right: 30px;
   z-index: 2;
 }
 
-/* Hero sidebar styles - No change needed here usually */
+/* Fix the sidebar positioning */
 .hero-sidebar {
-  flex: 0 0 30%; /* Or a fixed width like 'flex: 0 0 350px;' */
-  max-width: 350px; /* Good practice to add max-width */
+  flex: 0 0 30%; /* Keep the width proportion */
+  height: 100%;
   background-color: white;
-  min-height: 500px; /* Adjust as needed */
-  height: 100%; /* Try stretching to full container height */
-  align-self: stretch; /* Make sidebar stretch vertically */
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0; 
+  margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  border-radius: 3px 0 0 3px; /* Optional: round top-left/bottom-left */
+  position: absolute; /* Position it absolutely */
+  right: 0; /* Flush against the right edge */
+  top: 0;
+  bottom: 0;
+  border-radius: 3px 0 0 3px;
   box-shadow: -5px 0px 15px rgba(0,0,0,0.1);
   z-index: 2;
-  /* No right: 0 needed as the parent flex container handles positioning */
 }
    
 .hero-title {
