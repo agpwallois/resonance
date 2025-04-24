@@ -169,39 +169,47 @@ header.scrolled .logo img {
   position: relative;
 }
 
-/* Hero container layout */
+/* Hero container layout - NOW FULL WIDTH */
 .hero-container {
-  display: flex; /* Make this a flex container */
-  align-items: center; /* Vertically align items in the middle */
+  display: flex;
+  align-items: center; /* Align items vertically */
   position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* Ensure content is above SVG curves */
+  width: 100%; /* Takes full width of .hero */
+  /* Removed max-width and margin: 0 auto inherited from .container */
+  /* Optional: Add padding directly if needed on the edges */
+  /* padding: 0 5%; */
+  box-sizing: border-box; /* Include padding in width calculation */
+  height: 100%; /* Ensure it fills the parent height if needed */
+  z-index: 2;
 }
 
 /* Hero content adjustment */
 .hero-content {
-  flex: 0 0 70%; /* Assign 70% of the width */
-  max-width: 70%;
-  padding-right: 30px; /* Add spacing between content and sidebar */
-  z-index: 2; /* Ensure content is above SVG curves */
-  /* Removed internal flex properties from previous attempt as they weren't strictly necessary for side-by-side layout */
+  flex: 1; /* Let content take up remaining space */
+  max-width: 800px; /* Example: Constrain the text content width */
+  margin-left: 5%;   /* Add margin to simulate container padding */
+  padding-right: 30px; /* Keep spacing between content and sidebar */
+  z-index: 2;
 }
 
-/* Hero sidebar styles */
+/* Hero sidebar styles - No change needed here usually */
 .hero-sidebar {
-  flex: 0 0 30%; /* Assign 30% of the width */
-  max-width: 30%;
+  flex: 0 0 30%; /* Or a fixed width like 'flex: 0 0 350px;' */
+  max-width: 350px; /* Good practice to add max-width */
   background-color: white;
-  height: 100%; /* Maintain full height if desired, or adjust */
-  position: relative; /* Keep relative if needed for internal elements */
-  /* Removed right: 0; top: 0; as flex handles positioning */
+  min-height: 500px; /* Adjust as needed */
+  height: 100%; /* Try stretching to full container height */
+  align-self: stretch; /* Make sidebar stretch vertically */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px; /* Added padding for content inside sidebar */
-  box-sizing: border-box; /* Include padding in width/height */
-  z-index: 2; /* Ensure content is above SVG curves */
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 3px 0 0 3px; /* Optional: round top-left/bottom-left */
+  box-shadow: -5px 0px 15px rgba(0,0,0,0.1);
+  z-index: 2;
+  /* No right: 0 needed as the parent flex container handles positioning */
 }
    
 .hero-title {
