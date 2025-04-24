@@ -155,13 +155,6 @@ header.scrolled .logo img {
   
 }
 
-.resonance-curves-2 {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  pointer-events: none;
-  z-index: 3;
-}
    
 /* Elegant Hero Section with Depth */
 .hero {
@@ -1002,52 +995,36 @@ a, button {
 <section class="hero" id="Home">
 
 <svg class="resonance-curves" viewBox="0 0 2000 500" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-
-  <!-- δ = 0.15ω₀ curve (highest and sharpest) -->
-<path d="M0,500 
-          C400,450 450,150 500,150 
-          C550,150 600,450 2000,500" 
-       fill="none" stroke="white" stroke-width="3" />
-
-<path d="M0,500
-          C400,450 450,250 500,250 
-          C550,250 600,450 2000,500" 
-       id="lowerCurve1"
-       fill="none" stroke="white" stroke-width="3" />
-
-  <!-- Heavily damped curve (lowest and flattest) -->
-<path d="M0,500
-          C400,450 450,350 500,350 
-          C550,350 600,450 2000,500" 
-       id="lowerCurve2"
-       fill="none" stroke="white" stroke-width="3" />
-
-</svg>
-
-<svg class="resonance-curves-2" viewBox="0 0 2000 500" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-
-  <!-- δ = 0.15ω₀ curve (highest and sharpest) -->
-<path d="M0,500 
-          C400,450 450,150 500,150 
-          C550,150 600,450 2000,500" 
-       fill="none" stroke="#2D5A73" stroke-width="3" />
-
-<path d="M0,500
-          C400,450 450,250 500,250 
-          C550,250 600,450 2000,500" 
-       id="lowerCurve1"
-       fill="none" stroke="#2D5A73" stroke-width="3" />
-
-  <!-- Heavily damped curve (lowest and flattest) -->
-<path d="M0,500
-          C400,450 450,350 500,350 
-          C550,350 600,450 2000,500" 
-       id="lowerCurve2"
-       fill="none" stroke="#2D5A73" stroke-width="3" />
-
-</svg>
-
+ 
+  <defs>
+    <linearGradient id="curveGradient" gradientUnits="userSpaceOnUse" x1="100" y1="0" x2="1900" y2="0">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="60%" stop-color="#2D5A73" />
+    </linearGradient>
+  </defs>
   
+  <!-- δ = 0.15ω₀ curve (highest and sharpest) -->
+<path d="M0,500 
+          C400,450 450,150 500,150 
+          C550,150 600,450 2000,500" 
+       fill="none" stroke="url(#curveGradient)" stroke-width="3" />
+
+<path d="M0,500
+          C400,450 450,250 500,250 
+          C550,250 600,450 2000,500" 
+       id="lowerCurve1"
+       fill="none" stroke="url(#curveGradient)" stroke-width="3" />
+
+  <!-- Heavily damped curve (lowest and flattest) -->
+<path d="M0,500
+          C400,450 450,350 500,350 
+          C550,350 600,450 2000,500" 
+       id="lowerCurve2"
+       fill="none" stroke="url(#curveGradient)" stroke-width="3" />
+
+</svg>
+
+ 
 
   
   <div class="container hero-container">
