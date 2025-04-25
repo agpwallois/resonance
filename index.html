@@ -1007,39 +1007,38 @@ a, button {
 
 
 
-<svg class="resonance-curves" viewBox="0 0 2000 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="sharpTransition" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="2000" y2="0">
-      <stop offset="35%" stop-color="white" />
-      <stop offset="35.01%" stop-color="#2D5A73" />
-    </linearGradient>
-  </defs>
-  <!-- Top curve with smooth transitions and narrow apex -->
-  <path d="M0,500
-          C300,480 550,300 680,100
-          C690,80 710,80 720,100
-          C850,300 1200,450 1900,499
-          L2000,500"
-       fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
-       
-  <!-- Middle curve with smooth transitions and narrow apex -->
-  <path d="M0,500
-    C400,480 600,350 680,200
-    C690,180 710,180 720,200
-    C800,350 1100,470 1900,499
-    L2000,500"
-    id="lowerCurve1"
+
+  <svg class="resonance-curves" viewBox="0 0 2000 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+      <linearGradient id="sharpTransition" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="2000" y2="0">
+        <!-- Gradient transition now aligns with the peak at x=700 (35% of width 2000) -->
+        <stop offset="35%" stop-color="white" />       <!-- CHANGED HERE -->
+        <stop offset="35.01%" stop-color="#2D5A73" />  <!-- CHANGED HERE -->
+      </linearGradient>
+    </defs>
+
+    <path d="M0,500
+            C600,450 650,150 700,150
+            C750,150 800,450 1900,499
+            L2000,500"
+         fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
+
+    <path d="M0,500
+      C600,450 650,250 700,250
+      C750,250 800,450 1900,499
+      L2000,500"
+      id="lowerCurve1"
     fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
-    
-  <!-- Bottom curve with smooth transitions and narrow apex -->
-  <path d="M0,500
-  C500,490 650,400 680,300
-  C690,285 710,285 720,300
-  C750,400 1000,480 1900,499
-  L2000,500"
-  id="lowerCurve2"
+
+    <path d="M0,500
+    C600,450 650,350 700,350
+    C750,350 800,450 1900,499
+    L2000,500"
+    id="lowerCurve2"
   fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
-</svg>
+
+  </svg>
 
   
   <div class="hero-container">
