@@ -1017,35 +1017,70 @@ a, button {
 <svg class="resonance-curves" viewBox="0 0 2000 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="sharpTransition" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="2000" y2="0">
-      <!-- Moved the gradient transition point to match the shifted curve peak -->
-      <stop offset="65%" stop-color="white" />      
-      <stop offset="65.01%" stop-color="#2D5A73" />  
+      <!-- Gradient for curves peaking towards the right -->
+      <stop offset="65%" stop-color="white" />
+      <stop offset="65.01%" stop-color="#2D5A73" />
+    </linearGradient>
+    <linearGradient id="sharpTransitionReversed" gradientUnits="userSpaceOnUse" x1="2000" y1="0" x2="0" y2="0">
+      <!-- Reversed gradient for curves peaking towards the left -->
+      <stop offset="65%" stop-color="white" />
+      <stop offset="65.01%" stop-color="#2D5A73" />
+    </linearGradient>
+    <linearGradient id="sharpTransitionReversedDown" gradientUnits="userSpaceOnUse" x1="2000" y1="0" x2="0" y2="0">
+        <!-- Adjusted gradient transition point for downward curves -->
+        <!-- The peak is controlled by X=1200, which is 60% -->
+        <!-- However, the visual 'start' of the peak might feel earlier due to X=700 -->
+        <!-- Let's try keeping the original reverse transition at 65% from the right (X=700) -->
+      <stop offset="65%" stop-color="white" />
+      <stop offset="65.01%" stop-color="#2D5A73" />
     </linearGradient>
   </defs>
 
-  <!-- First curve - moved all points to the right -->
+  <!-- First curve - original -->
   <path d="M0,500
           C800,450 1150,150 1300,150
           C1450,150 1500,450 1900,499
           L2000,500"
        fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
-
-  <!-- Second curve - moved all points to the right -->
+  <!-- Second curve - original -->
   <path d="M0,500
     C800,450 1150,250 1300,250
     C1450,250 1500,450 1900,499
     L2000,500"
     id="lowerCurve1"
   fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
-
-  <!-- Third curve - moved all points to the right -->
+  <!-- Third curve - original -->
   <path d="M0,500
   C800,450 1150,350 1300,350
   C1450,350 1500,450 1900,499
   L2000,500"
   id="lowerCurve2"
-fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
+  fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
+
+  <!-- Fourth curve - original -->
+  <path d="M0,500
+  C800,450 1150,50 1300,50
+  C1450,50 1500,450 1900,499
+  L2000,500"
+  fill="none" stroke="url(#sharpTransition)" stroke-width="3" />
+
+  <!-- Fifth curve - horizontally inverted AND vertically flipped (apex down) -->
+  <!-- Starts top-left (0,0), dips down towards Y=350 (500-150), ends top-right (2000,0) -->
+  <path d="M0,0
+  C100,1 550,50 700,50
+  C850,50 1200,350 2000,0"
+  fill="none" stroke="url(#sharpTransitionReversed)" stroke-width="3" />
+
+  <!-- Sixth curve - horizontally inverted AND vertically flipped (apex down) -->
+  <!-- Starts top-left (0,0), dips down towards Y=250 (500-250), ends top-right (2000,0) -->
+  <path d="M0,0
+  C100,1 550,50 700,50
+  C850,50 1200,250 2000,0"
+  fill="none" stroke="url(#sharpTransitionReversed)" stroke-width="3" />
+
 </svg>
+
+    
     <div class="hero-content">
       <h1 class="hero-title">Project Finance Advisor<br/>for Energy and Infrastructure</h1>
       <p class="hero-subtitle">We deliver valuable financial advisory services tailored to infrastructure and energy projects around the world. Our experts create the strategic advantage you need to succeed.</p>
